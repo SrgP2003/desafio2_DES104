@@ -7,7 +7,7 @@ using Eventos.DAL.Interfaces;
 
 namespace Eventos.DAL
 {
-    internal class DatabaseRepository : IDatabaseRepository
+    public class DatabaseRepository : IDatabaseRepository
     {
         private readonly string _connectionString;
 

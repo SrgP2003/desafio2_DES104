@@ -5,7 +5,7 @@ using Eventos.Entities.Models;
 
 namespace Eventos.DAL.Interfaces
 {
-    internal interface IOrganizadorRepository
+    public interface IOrganizadorRepository
     {
         Task<IEnumerable<Organizador>> GetAllAsync();
 

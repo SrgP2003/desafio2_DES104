@@ -1,4 +1,6 @@
 using Eventos.Common;
+using Eventos.BL.Services;
+using Eventos.DAL.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+builder.Services.AddRepositoryConnector();
+builder.Services.AddServiceConnector();
 
 var app = builder.Build();
 

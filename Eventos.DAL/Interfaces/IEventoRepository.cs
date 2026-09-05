@@ -6,7 +6,7 @@ using Eventos.Entities.Models;
 
 namespace Eventos.DAL.Interfaces
 {
-    internal interface IEventoRepository
+    public interface IEventoRepository
     {
         Task<IEnumerable<Evento>> GetAllAsync();
 

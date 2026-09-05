@@ -5,9 +5,8 @@ using Eventos.Entities.Models;
 
 namespace Eventos.DAL.Interfaces
 {
-    internal interface IParticipanteRepository
+    public interface IParticipanteRepository
     {
-
         Task<IEnumerable<Participante>> GetAllAsync();
 
         Task<Participante?> GetByIdAsync(int id);
