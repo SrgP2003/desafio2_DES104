@@ -1,3 +1,7 @@
 <Solution>
   <Project Path="Desafio2/Desafio2.csproj" />
+  <Project Path="Eventos.BL/Eventos.BL.csproj" />
+  <Project Path="Eventos.Common/Eventos.Common.csproj" />
+  <Project Path="Eventos.DAL/Eventos.DAL.csproj" />
+  <Project Path="Eventos.Entities/Eventos.Entities.csproj" />
 </Solution>
