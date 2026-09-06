@@ -1,0 +1,79 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Evento",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/eventos",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Evento/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/eventos/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Organizador",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/organizadores",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Organizador/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/organizadores/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Participante",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/participantes",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Participante/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/participantes/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {}
+}

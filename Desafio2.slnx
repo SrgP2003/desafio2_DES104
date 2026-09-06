@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Desafio2.Gateway/Desafio2.Gateway.csproj" Id="f4dbb5de-fe66-4996-abf3-bb260a7387fd" />
   <Project Path="Desafio2/Desafio2.csproj" />
   <Project Path="Eventos.BL/Eventos.BL.csproj" />
   <Project Path="Eventos.Common/Eventos.Common.csproj" />
