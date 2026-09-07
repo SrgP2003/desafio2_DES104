@@ -18,13 +18,17 @@ builder.Services.AddServiceConnector();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() ||
+    app.Environment.IsEnvironment("Docker"))
 {
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsEnvironment("Docker"))
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 

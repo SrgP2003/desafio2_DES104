@@ -1,0 +1,77 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Evento",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/eventos",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Evento/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/eventos/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Organizador",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/organizadores",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Organizador/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/organizadores/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Participante",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/participantes",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Participante/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "api",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/participantes/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {}
+}

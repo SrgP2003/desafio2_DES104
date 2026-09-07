@@ -2,11 +2,21 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+
+var ocelotConfig = builder.Environment.IsEnvironment("Docker")
+    ? "ocelot.Docker.json"
+    : "ocelot.json";
+
+builder.Configuration.AddJsonFile(
+    ocelotConfig,
+    optional: false,
+    reloadOnChange: true
+);
+
 builder.Services.AddOcelot();
 
 var app = builder.Build();
-//app.MapGet("/", () => "Hello World!");
 
 await app.UseOcelot();
+
 app.Run();

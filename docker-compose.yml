@@ -1,0 +1,78 @@
+services:
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: desafio2-sqlserver
+
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Admin123!Desafio"
+
+    ports:
+      - "1433:1433"
+
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+    restart: unless-stopped
+
+
+  redis:
+    image: redis:7-alpine
+    container_name: desafio2-redis
+
+    ports:
+      - "6379:6379"
+
+    volumes:
+      - redis_data:/data
+
+    restart: unless-stopped
+
+
+  api:
+    build:
+      context: .
+      dockerfile: Desafio2/Dockerfile
+
+    container_name: desafio2-api
+
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_URLS: http://+:8080
+
+      AppSettings__ConnectionString: "Server=sqlserver,1433;Database=EventosDB;User Id=sa;Password=Admin123!Desafio;TrustServerCertificate=True;Encrypt=False;"
+
+    ports:
+      - "7255:8080"
+
+    depends_on:
+      - sqlserver
+      - redis
+
+    restart: unless-stopped
+
+
+  gateway:
+    build:
+      context: ./Desafio2.Gateway
+      dockerfile: Dockerfile
+
+    container_name: desafio2-gateway
+
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_URLS: http://+:8080
+
+    ports:
+      - "7207:8080"
+
+    depends_on:
+      - api
+
+    restart: unless-stopped
+
+
+volumes:
+  sqlserver_data:
+  redis_data:
