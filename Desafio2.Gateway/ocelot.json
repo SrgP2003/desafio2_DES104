@@ -10,7 +10,35 @@
         }
       ],
       "UpstreamPathTemplate": "/eventos",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      },
+      "CacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "eventos-cache"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Evento",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/eventos",
+      "UpstreamHttpMethod": [ "POST" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      }
     },
     {
       "DownstreamPathTemplate": "/api/Evento/{id}",
@@ -22,7 +50,35 @@
         }
       ],
       "UpstreamPathTemplate": "/eventos/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      },
+      "CacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "eventos-cache"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Evento/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/eventos/{id}",
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      }
     },
 
     {
@@ -35,7 +91,35 @@
         }
       ],
       "UpstreamPathTemplate": "/organizadores",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      },
+      "CacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "organizadores-cache"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Organizador",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/organizadores",
+      "UpstreamHttpMethod": [ "POST" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      }
     },
     {
       "DownstreamPathTemplate": "/api/Organizador/{id}",
@@ -47,7 +131,35 @@
         }
       ],
       "UpstreamPathTemplate": "/organizadores/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      },
+      "CacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "organizadores-cache"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Organizador/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/organizadores/{id}",
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      }
     },
 
     {
@@ -60,7 +172,35 @@
         }
       ],
       "UpstreamPathTemplate": "/participantes",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      },
+      "CacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "participantes-cache"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Participante",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/participantes",
+      "UpstreamHttpMethod": [ "POST" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      }
     },
     {
       "DownstreamPathTemplate": "/api/Participante/{id}",
@@ -72,8 +212,40 @@
         }
       ],
       "UpstreamPathTemplate": "/participantes/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      },
+      "CacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "participantes-cache"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Participante/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7255
+        }
+      ],
+      "UpstreamPathTemplate": "/participantes/{id}",
+      "UpstreamHttpMethod": [ "PUT", "DELETE" ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Limit": 10,
+        "Period": "1m",
+        "StatusCode": 429
+      }
     }
   ],
-  "GlobalConfiguration": {}
+  "GlobalConfiguration": {
+    "RateLimitOptions": {
+      "ClientIdHeader": "Oc-Client"
+    }
+  }
 }
